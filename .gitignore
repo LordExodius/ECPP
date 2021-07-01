@@ -1,2 +1,4 @@
 *.ppk
-**/res
+*.png
+*.svg
+*.pdf
