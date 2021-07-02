@@ -52,7 +52,17 @@ h2
     font-size: medium;
 }
 
+h3
+{
+    font-size: small;
+}
+
 h1, h2, p
 {
     margin-bottom: 15px;
+}
+
+ul, li
+{
+    margin-left: 15px;
 }
