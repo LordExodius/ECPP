@@ -3,3 +3,6 @@
 *.svg
 *.pdf
 *.bat
+*.txt
+working/
+blog/*/

@@ -5,8 +5,8 @@
     padding: 0;
 }
 
-
-.main
+/* main block for */
+#main
 {
     display: block;
     justify-content: space-between;
@@ -16,12 +16,18 @@
     padding: 10px;
 }
 
+/* #content and header are one unit for two sided pages */
 #content
 {
     display: inline-block;
     width: 80%;
     max-width: 350px;
     margin: 15px;
+}
+
+#centered
+{
+    text-align: center;
 }
 
 header
@@ -65,4 +71,9 @@ h1, h2, p
 ul, li
 {
     margin-left: 15px;
+}
+
+a
+{
+    color: #3f9999;
 }
