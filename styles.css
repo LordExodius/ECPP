@@ -30,6 +30,11 @@
     text-align: center;
 }
 
+.mono
+{
+    font-family: monospace;
+}
+
 header
 {
     display: block;
