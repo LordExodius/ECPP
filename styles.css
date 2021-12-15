@@ -11,7 +11,17 @@
     display: block;
     justify-content: space-between;
     width: 100%;
-    max-width: 610px;
+    max-width: 800px;
+    margin: 10px;
+    padding: 10px;
+}
+
+#main-large
+{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
     margin: 10px;
     padding: 10px;
 }
@@ -25,7 +35,21 @@
     margin: 15px;
 }
 
-#centered
+#photo_content
+{
+    display: inline-block;
+    justify-content: center;
+    width: 80%;
+    max-width: 750px; /* thumbnail size + padding x2 */
+    margin: 15px;
+}
+
+#blog_background
+{
+    position: sticky;
+}
+
+.centered
 {
     text-align: center;
 }
@@ -33,6 +57,18 @@
 .mono
 {
     font-family: monospace;
+}
+
+.card
+{
+    border: 1px solid rgb(212, 207, 201);
+    display: inline-block;
+    font-family: monospace;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0px 5px 10px #999;
+    margin: 0px 0px 15px 15px;
+    max-width: 200px;
 }
 
 header
@@ -56,6 +92,7 @@ body
 img
 {
     max-width: 100%;
+    margin-bottom: 10px;
 }
 
 h2

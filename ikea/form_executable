@@ -1,0 +1,3 @@
+#!/bin/bash
+cd /home/oscar/www/ikea
+python3 shelf.py

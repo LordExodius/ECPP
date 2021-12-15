@@ -4,5 +4,8 @@
 *.pdf
 *.bat
 *.txt
+*.jpg
+*.ignore
 working/
 blog/*/
+photobook/*.js

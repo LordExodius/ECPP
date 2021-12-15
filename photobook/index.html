@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>~oscar</title>
+        <link rel="icon" href="../res/awwThumbs.svg" sizes="any" type="image/svg+xml"/>
+        <link rel="stylesheet" href="../styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        <script src="nameFile.js"></script>
+    </head>
+
+    <body>
+        <div id="main-large">
+            <header>
+                <h1>photobook</h1>
+                <h2><a href="../index.html">../</a></h2>
+
+                <div class="card" id="blog_background">
+                    <img src="../res/awwWave.png" width="80px">
+                     <h2 class="mono">oscar's photobook</h2>
+                    <p class="mono">kit: sony a6000 w/ sigma 30mm f1.4 | samsung s9</p>
+                </div>
+            </header>
+
+            <div id="photo_content"></div>
+        </div>
+        <script>
+            console.log(DATA)
+            var content = document.getElementById("photo_content")
+            for(var key in DATA)
+            {
+                var tempCard = document.createElement("div")
+                var tempLink = document.createElement("a")
+                var tempImg = document.createElement("img")
+                var tempText = document.createElement("p")
+                tempCard.className = "card"
+
+                // new path for thumbnails
+                // /home/www/res/thumbs/photobook/
+                
+                tempImg.src = "/res/thumbs/photobook/"+key.substring(0, key.indexOf("."))+".jpg"
+                tempLink.href = "./"+key
+                tempLink.appendChild(tempImg)
+                tempText.innerHTML = DATA[key]
+                tempText.className = "mono"
+                tempCard.appendChild(tempLink)
+                tempCard.appendChild(tempText)
+                content.appendChild(tempCard)
+            }
+        </script>
+    </body>
+</html>
