@@ -100,7 +100,7 @@ h2
     font-size: medium;
 }
 
-h3, p
+h3, p, a, li
 {
     font-size: small;
 }
