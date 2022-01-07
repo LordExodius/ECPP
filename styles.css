@@ -41,12 +41,7 @@
     justify-content: center;
     width: 80%;
     max-width: 750px; /* thumbnail size + padding x2 */
-    margin: 15px;
-}
-
-#blog_background
-{
-    position: sticky;
+    margin: 7px;
 }
 
 .centered
@@ -57,6 +52,41 @@
 .mono
 {
     font-family: monospace;
+}
+
+/* modal classes for photobook */
+.modal
+{
+    display: none;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal_image
+{
+    display: block;
+    margin: auto;
+    max-width: 80vw;
+    max-height: 80vh;
+}
+
+.modal_card
+{
+    border: 1px solid rgb(212, 207, 201);
+    background-color: #fefefe;
+    display: inline-block;
+    font-family: monospace;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0px 5px 10px #999;
+    margin: auto;
+    max-width: 80vw;
+    max-height: 80vh;
 }
 
 .card

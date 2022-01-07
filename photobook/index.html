@@ -18,7 +18,7 @@
                 <h1>photobook</h1>
                 <h2><a href="../index.html">../</a></h2>
 
-                <div class="card" id="blog_background">
+                <div class="card">
                     <img src="../res/awwWave.png" width="80px">
                     <h2 class="mono">oscar's photobook</h2>
                     <p class="mono">
@@ -30,9 +30,16 @@
                 </div>
             </header>
 
-        <div id="photo_content"></div>
+            <div id="photo_content"></div>
+            <div id="modal" class="modal" onclick="this.style.display='none'">
+                <div class="modal_card">
+                    <img class="modal_image" id="modal_image">
+                </div>
+            </div>
         </div>
+
         <script>
+            // load images
             console.log(DATA)
             var content = document.getElementById("photo_content")
             for(var key in DATA)
@@ -47,13 +54,26 @@
                 // /home/www/res/thumbs/photobook/
                 
                 tempImg.src = "/res/thumbs/photobook/"+key.substring(0, key.indexOf("."))+".jpg"
-                tempLink.href = "./"+key
+
+                // link to large image
+                tempImg.setAttribute("big", "./"+key)
+                // click for modal image
+                tempImg.setAttribute("onclick", "onClick(this)")
+
+                tempImg.loading = "lazy"
+                //tempLink.href = "./"+key
                 tempLink.appendChild(tempImg)
                 tempText.innerHTML = DATA[key]
                 tempText.className = "mono"
                 tempCard.appendChild(tempLink)
                 tempCard.appendChild(tempText)
                 content.appendChild(tempCard)
+            }
+
+            // modal image
+            function onClick(element) {
+                document.getElementById("modal_image").src = element.getAttribute("big");
+                document.getElementById("modal").style.display = "flex";  
             }
         </script>
     </body>

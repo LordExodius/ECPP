@@ -18,14 +18,23 @@
                 <h1>photobook</h1>
                 <h2><a href="../index.html">../</a></h2>
 
-                <div class="card" id="blog_background">
-                    <img src="../res/awwWave.png" width="80px">
-                     <h2 class="mono">oscar's photobook</h2>
-                    <p class="mono">kit: sony a6000 w/ sigma 30mm f1.4 | samsung s9</p>
-                </div>
+                
             </header>
 
-            <div id="photo_content"></div>
+            <div id="photo_content">
+                <div class="card" id="blog_background">
+                    <div class="card_content">
+                        <img src="../res/awwWave.png" width="80px">
+                        <h2 class="mono">oscar's photobook</h2>
+                        <p class="mono">
+                            camera: sony a6000 
+                            <br>sigma 30mm f1.4
+                            <br>sigma 56mm f1.4 
+                            <br>black promist 1/4
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
         <script>
             console.log(DATA)
@@ -33,6 +42,7 @@
             for(var key in DATA)
             {
                 var tempCard = document.createElement("div")
+                var tempLink = document.createElement("a")
                 var tempImg = document.createElement("img")
                 var tempText = document.createElement("p")
                 tempCard.className = "card"
@@ -40,10 +50,13 @@
                 // new path for thumbnails
                 // /home/www/res/thumbs/photobook/
                 
-                tempImg.src = "/res/thumbs/photobook/"+key
+                tempImg.src = "/res/thumbs/photobook/"+key.substring(0, key.indexOf("."))+".jpg"
+                tempImg.loading = "lazy"
+                tempLink.href = "./"+key
+                tempLink.appendChild(tempImg)
                 tempText.innerHTML = DATA[key]
                 tempText.className = "mono"
-                tempCard.appendChild(tempImg)
+                tempCard.appendChild(tempLink)
                 tempCard.appendChild(tempText)
                 content.appendChild(tempCard)
             }
