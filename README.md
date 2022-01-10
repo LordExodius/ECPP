@@ -1,5 +1,6 @@
 # ECPP
-Turns out, the other website was really hard to add anything onto due to styling inconsistencies and how I organized the CSS. Also, I wanted to try a different style.
+A new website, with other cool things!
+Turns out, the other site was really hard to add to due to styling inconsistencies and how I organized the CSS. Figured I might as well try something different this time.
 
 ## Things on this site
 ### A landing page! 
