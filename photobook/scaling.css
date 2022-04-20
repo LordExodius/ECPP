@@ -1,0 +1,10 @@
+@media screen and (max-width: 530px) {
+    #main-large
+    {
+        flex-wrap: wrap;
+    }
+    .card
+    {
+        margin: auto auto 15px;
+    }
+}

@@ -6,6 +6,7 @@
         <title>~oscar</title>
         <link rel="icon" href="../res/awwThumbs.svg" sizes="any" type="image/svg+xml"/>
         <link rel="stylesheet" href="../styles.css">
+        <link rel="stylesheet" href="./scaling.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
@@ -14,9 +15,9 @@
 
     <body>
         <div id="main-large">
-            <header>
-                <h1>photobook</h1>
-                <h2><a href="../index.html">../</a></h2>
+            <header style="text-align: center; max-width: 175px;">
+                <h1 style="text-align: left;">photobook</h1>
+                <h2 style="text-align: left;"><a href="../index.html">../</a></h2>
                 <div class="card">
                     <img src="../res/awwWave.png" width="80px">
                     <h2 class="mono">oscar's photobook</h2>
@@ -30,7 +31,7 @@
             </header>
 
             <div id="photo_content"></div>
-            <div id="modal" class="modal" onclick="this.style.display='none'">
+            <div id="modal" class="modal" onclick="clickModal(this)">
                 <div class="modal_card">
                     <img class="modal_image" id="modal_image">
                 </div>
@@ -56,8 +57,9 @@
 
                 // link to large image
                 tempImg.setAttribute("big", "./"+key)
+                tempImg.setAttribute("name", key)
                 // click for modal image
-                tempImg.setAttribute("onclick", "onClick(this)")
+                tempImg.setAttribute("onclick", "clickImage(this)")
 
                 tempImg.loading = "lazy"
                 //tempLink.href = "./"+key
@@ -69,10 +71,27 @@
                 content.appendChild(tempCard)
             }
             // modal image
-            function onClick(element) {
+            function clickImage(element) {
+                window.history.replaceState(null, element.getAttribute("name"), "?img="+element.getAttribute("name"));
                 document.getElementById("modal_image").src = element.getAttribute("big");
                 document.getElementById("modal").style.display = "flex";  
             }
+
+            function clickModal(element) {
+                window.history.replaceState(null, "Home", "?");
+                element.style.display='none'
+            }
+
+            function urlLoadModal(name) {
+                const paramString = window.location.search;
+                if(paramString) {
+                    const urlParams = new URLSearchParams(paramString);
+                    document.getElementById("modal_image").src = "./" + urlParams.get("img");
+                    document.getElementById("modal").style.display = "flex";  
+                }
+            }
+
+            window.onload = urlLoadModal();
         </script>
     </body>
 </html>

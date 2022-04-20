@@ -42,6 +42,7 @@
     width: 80%;
     max-width: 750px; /* thumbnail size + padding x2 */
     margin: 7px;
+    text-align: center;
 }
 
 .centered
