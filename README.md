@@ -1,6 +1,5 @@
 # ECPP
-A new website, with other cool things!
-Turns out, the other site was really hard to add to due to styling inconsistencies and how I organized the CSS. Figured I might as well try something different this time.
+A new website, with other cool things! Hosted on a friend's private server.
 
 ## Things on this site
 ### A landing page! 
